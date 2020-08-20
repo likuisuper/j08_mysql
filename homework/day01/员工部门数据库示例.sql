@@ -1,0 +1,75 @@
+
+
+
+create table dept(
+       deptno int  primary key,  
+       dname varchar(20) unique not null, 
+       loc varchar(20) 
+);
+ commit;
+ 
+
+create table emp(
+       empno  int  primary key, 
+       ename varchar(10), 
+       job varchar(9), 
+       mgr int, 
+       hiredate date, 
+       salary float, 
+       comm float, 
+       deptno int 
+);
+ 
+  commit;
+
+alter table emp add constraint fk_emp_dept foreign key(deptno) references dept(deptno);
+
+
+INSERT INTO DEPT VALUES (10,'ACCOUNTING','NEW YORK');
+INSERT INTO DEPT VALUES (20,'RESEARCH','shanghai');
+INSERT INTO DEPT VALUES (30,'SALES','beijing');
+INSERT INTO DEPT VALUES (40,'OPERATIONS','suzhou');
+INSERT INTO DEPT VALUES (50,'ADMIN','suzhou');
+
+ commit;
+
+ 
+delete from emp;
+
+INSERT INTO EMP VALUES(7369,'SMITH','CLERK',7902,'1980-12-17',800,NULL,20);
+INSERT INTO EMP VALUES(7499,'ALLEN','SALESMAN',7698,'1981-02-20',1600,300,30);
+INSERT INTO EMP VALUES(7521,'WARD','SALESMAN',7698,'1981-02-22',1250,500,30);
+INSERT INTO EMP VALUES(7566,'JONES','MANAGER',7839,'1981-04-02',2975,NULL,20);
+INSERT INTO EMP VALUES(7654,'MARTIN','SALESMAN',7698,'1981-05-01',1250,1400,30);
+INSERT INTO EMP VALUES(7698,'BLAKE','MANAGER',7839,'1981-06-09',2850,NULL,30);
+INSERT INTO EMP VALUES(7782,'CLARK','MANAGER',7839,'1987-07-1',2450,NULL,10);
+INSERT INTO EMP VALUES(7788,'SCOTT','ANALYST',7566,'1981-11-17',3000,NULL,20);
+INSERT INTO EMP VALUES(7839,'KING','PRESIDENT',NULL,'1987-12-03',5000,NULL,10);
+INSERT INTO EMP VALUES(7844,'TURNER','SALESMAN',7698,'1981-03-12',1500,0,30);
+INSERT INTO EMP VALUES(7876,'ADAMS','CLERK',7788,'1981-02-13',1100,NULL,20);
+INSERT INTO EMP VALUES(7900,'JAMES','CLERK',7698,'1981-12-03',950,NULL,30);
+INSERT INTO EMP VALUES(7902,'FORD','ANALYST',7566,'1981-09-08',3000,NULL,20);
+INSERT INTO EMP VALUES(7934,'MILLER','CLERK',7782,'1981-06-02',1300,NULL,10);
+ 
+
+ commit;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
